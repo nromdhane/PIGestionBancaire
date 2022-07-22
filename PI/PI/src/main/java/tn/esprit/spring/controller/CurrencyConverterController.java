@@ -22,8 +22,9 @@ public class CurrencyConverterController {
     
     @PostMapping(value = "/convert")
     @ResponseBody
-    public MonetaryAmount convert(@RequestParam String currentCurrency, @RequestParam String targetCurrency, @RequestParam BigDecimal amount) {
+    public MonetaryAmount convert(@RequestParam("currentCurrency") String currentCurrency, @RequestParam("targetCurrency") String targetCurrency, @RequestParam ("amount") BigDecimal amount) {
         return currencyConverterService.convert(currentCurrency, targetCurrency, amount);
     }
 	
 }
+

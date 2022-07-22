@@ -22,9 +22,28 @@ public class Transaction  extends Operation implements Serializable{
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	@Column(name="ID")
-	private Long id;
+	private Integer id;
 	
 	@Column(name="Montant")
-	private Long montant;
+	private Integer montant;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Integer getMontant() {
+		return montant;
+	}
+
+	public void setMontant(Integer montant) {
+		this.montant = montant;
+	}
+	
+	
+	
 
 }
