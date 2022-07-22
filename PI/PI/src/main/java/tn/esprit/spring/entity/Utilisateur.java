@@ -9,6 +9,7 @@ import javax.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
 
+
 @Entity
 public class Utilisateur implements Serializable {
 	@Id
@@ -32,8 +33,5 @@ public class Utilisateur implements Serializable {
 		@Column(name="UTILISATEUR_EMAIL")
 		private String email;
 		
-		
-	
-	
 
 }
