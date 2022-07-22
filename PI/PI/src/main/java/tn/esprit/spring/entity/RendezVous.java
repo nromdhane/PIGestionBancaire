@@ -21,7 +21,7 @@ public class RendezVous implements Serializable {
 	private String description;
 	
 	@Column(name="Createur")
-	private String createur;
+	private Utilsateur createur;
 	
 	@Column(name="Inviter")
 	private String inviter;

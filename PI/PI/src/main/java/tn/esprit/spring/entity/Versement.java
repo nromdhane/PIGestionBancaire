@@ -5,9 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.DiscriminatorValue;
 
 @Entity
-public class Versement implements Serializable{
+@DiscriminatorValue("4")
+public class Versement extends Transaction implements Serializable{
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
