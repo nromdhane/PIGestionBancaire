@@ -11,6 +11,11 @@ import javax.persistence.OneToOne;
 @Entity
 public class Reclamation implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	@Column(name="ID")
@@ -22,7 +27,9 @@ public class Reclamation implements Serializable {
 	
 	@Column(name="Objet")
 	private String objet;
-     
+	
+	@Column(name="sentiment")
+	private String sentiment;
 	
 	@OneToOne
 	private TypeReclamation typeReclamation;
@@ -57,11 +64,36 @@ public class Reclamation implements Serializable {
 	}
 
 
-	public Reclamation(Long id, String description, String objet) {
+
+
+
+	public String getSentiment() {
+		return sentiment;
+	}
+
+
+	public void setSentiment(String sentiment) {
+		this.sentiment = sentiment;
+	}
+
+
+	public TypeReclamation getTypeReclamation() {
+		return typeReclamation;
+	}
+
+
+	public void setTypeReclamation(TypeReclamation typeReclamation) {
+		this.typeReclamation = typeReclamation;
+	}
+
+
+	public Reclamation(Long id, String description, String objet, String sentiment, TypeReclamation typeReclamation) {
 		super();
 		this.id = id;
 		this.description = description;
 		this.objet = objet;
+		this.sentiment = sentiment;
+		this.typeReclamation = typeReclamation;
 	}
 
 
@@ -72,7 +104,11 @@ public class Reclamation implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Reclamation [id=" + id + ", description=" + description + ", objet=" + objet + "]";
+		return "Reclamation [id=" + id + ", description=" + description + ", objet=" + objet + ", sentiment="
+				+ sentiment + ", typeReclamation=" + typeReclamation + "]";
 	}
+
+
+
 	
 }
